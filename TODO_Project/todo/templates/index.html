@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body { font-family: Arial; margin: 40px }
+        a { margin-right: 10px }
+        .add { margin-bottom: 20px; display: inline-block }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <a class="add" href="{% url 'create' %}">Add New To-Do</a>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                {{ todo.subject }}
+                <a href="{% url 'view' todo.id %}">View</a>
+                <a href="{% url 'edit' todo.id %}">Edit</a>
+                <a href="{% url 'delete' todo.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

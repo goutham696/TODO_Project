@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do Form</title>
+    <style>
+        body { font-family: Arial; margin: 40px }
+        input, textarea { width: 100%; margin-bottom: 10px }
+        button { padding: 6px 12px }
+    </style>
+</head>
+<body>
+    <h1>To-Do</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
